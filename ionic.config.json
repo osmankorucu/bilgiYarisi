@@ -1,0 +1,8 @@
+{
+  "name": "bilgiYarismasi",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular",
+  "id": "f27baf86"
+}
