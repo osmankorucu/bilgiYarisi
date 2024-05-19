@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Giriş
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<div class="background">
+  <div class="wrapper fadeInDown">
+    <div id="formContent">
+      <div class="fadeIn first">
+        <ion-icon name="unlock" style="zoom:2.0;"></ion-icon>
+      </div>
+
+      <!-- Login Form -->
+      <form [formGroup]="loginForm">
+        <input type="text" formControlName="lNickname" [(ngModel)]="loginNickname" id="nickname" class="fadeIn second" name="login" placeholder="kullanıcı adı">
+        <!-- Hata mesajlarının kontrolü ve gösterimi -->
+        <div class="validation-errors">
+          <ng-container *ngFor="let validation of validation_messages.lNickname">
+            <div  *ngIf="loginForm.get('lNickname').hasError(validation.type) && (loginForm.get('lNickname').dirty || loginForm.get('lNickname').touched)">
+              {{ validation.message }}
+            </div>
+          </ng-container>
+        </div>
+        
+        <input type="password" formControlName="lPassword" [(ngModel)]="loginPassword" id="password" class="fadeIn third" name="login" placeholder="şifre">
+       
+        <!-- Hata mesajlarının kontrolü ve gösterimi -->
+        <div class="validation-errors">
+          <ng-container *ngFor="let validation of validation_messages.lPassword">
+            <div  *ngIf="loginForm.get('lPassword').hasError(validation.type) && (loginForm.get('lPassword').dirty || loginForm.get('lPassword').touched)">
+              {{ validation.message }}
+            </div>
+          </ng-container>
+        </div>
+       
+        <input type="submit" (click)="loginButton()" block [disabled]="!loginForm.valid" class="fadeIn fourth" value="Giriş">
+      </form>
+      <!-- Remind Passowrd -->
+      <div id="formFooter">
+        <p>Google hesabınız ile giriş yapın. </p> <a class="underlineHover" href="#"> <img src="../../assets/img/google_g_logo_png_593442.png" class="socialLogos"  alt="Google"> </a>
+        <p>Hesabınız yok mu?</p> <a class="underlineHover" href="./tabs/register"> Hemen kayıt olun. </a>
+      </div>
+
+    </div>
+  </div>
+  </div>
+</ion-content>

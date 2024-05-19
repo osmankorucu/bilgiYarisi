@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Kayıt
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="background">
+  <div class="wrapper fadeInDown">
+    <div id="formContent">
+      <div class="fadeIn first">
+        <ion-icon name="bookmark" style="zoom:2.0;"></ion-icon>
+      </div>
+
+      <!-- Login Form -->
+      <!-- ngModel .ts dosyasıyla baglantı saglar -->
+      <!-- formControlName ve formGroup  formun kontrolünü sağlar. -->
+      <form [formGroup]="registerForm">
+        <input type="text" formControlName="rEmail" [(ngModel)]="registerEmail" id="email" class="fadeIn second" name="login" placeholder="e-posta" required="required">
+      
+        <!-- Hata mesajlarının kontrolü ve gösterimi -->
+          <div class="validation-errors">
+            <ng-container *ngFor="let validation of validation_messages.rEmail">
+              <div  *ngIf="registerForm.get('rEmail').hasError(validation.type) && (registerForm.get('rEmail').dirty || registerForm.get('rEmail').touched)">
+                {{ validation.message }}
+              </div>
+            </ng-container>
+          </div>
+
+        <input type="text" formControlName="rNickname" [(ngModel)]="registerNickname" id="nickname" class="fadeIn third" name="login" placeholder="kullanıcı adı" >
+       <!-- Hata mesajlarının kontrolü ve gösterimi -->
+          <div class="validation-errors">
+            <ng-container *ngFor="let validation of validation_messages.rNickname">
+              <div  *ngIf="registerForm.get('rNickname').hasError(validation.type) && (registerForm.get('rNickname').dirty || registerForm.get('rNickname').touched)">
+                {{ validation.message }}
+              </div>
+            </ng-container>
+          </div>
+       
+        <input type="password" formControlName="rPassword" [(ngModel)]="registerPassword" id="password" class="fadeIn fourth" name="login" placeholder="şifre">
+         <!-- Hata mesajlarının kontrolü ve gösterimi -->
+          <div class="validation-errors">
+            <ng-container *ngFor="let validation of validation_messages.rPassword">
+              <div  *ngIf="registerForm.get('rPassword').hasError(validation.type) && (registerForm.get('rPassword').dirty || registerForm.get('rPassword').touched)">
+                {{ validation.message }}
+              </div>
+            </ng-container>
+          </div>
+
+        <input type="submit" (click)="registerButton()"  block [disabled]="!registerForm.valid" class="fadeIn fiveth" value="Kayıt Ol">
+      </form>
+      <!-- Remind Passowrd -->
+      <div id="formFooter">
+        <p>Zaten bir hesabınız var mı?</p> <a class="underlineHover" href="./tabs/signin"> Giriş yapın. </a>
+      </div>
+
+    </div>
+  </div>
+  </div>
+</ion-content>

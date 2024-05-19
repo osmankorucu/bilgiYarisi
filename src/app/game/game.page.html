@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Oyun</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content >
+  <div class="background">
+    <div class="wrapper fadeInDown">
+      <div id="formContent">
+        <div class="fadeIn first">
+          <ion-icon name="help" style="zoom:2.0;"></ion-icon>
+          <ion-item [(ngModel)]="soru"> {{soru}} </ion-item>
+        </div>
+        <div class="fadeIn second">
+          <ion-button  color="dark" [(ngModel)]="aSikki"> {{aSikki}} </ion-button><br>
+          <ion-button color="dark" [(ngModel)]="bSikki"> {{bSikki}} </ion-button><br>
+          <ion-button color="dark" [(ngModel)]="cSikki"> {{cSikki}} </ion-button><br>
+          <ion-button color="dark" [(ngModel)]="dSikki"> {{dSikki}} </ion-button><br>
+        </div>
+        <div id="formFooter" >
+          <ion-button color="dark"> Ayrıl </ion-button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+</ion-content>

@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Profil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <div class="background">
+    <div class="wrapper fadeInDown">
+      <div id="formContent">
+        <div class="fadeIn first">
+      <ion-icon name="person" style="zoom:2.0;"></ion-icon>
+      <ion-item [(ngModel)]="kullaniciAdi">Kullanıcı Adı: {{kullaniciAdi}} </ion-item>
+      <ion-item [(ngModel)]="ePosta">E-posta: {{ePosta}} </ion-item>
+      <ion-item [(ngModel)]="isim">İsim: {{isim}} </ion-item>
+      <ion-item [(ngModel)]="soyadi">Soyadı: {{soyadi}} </ion-item>
+      <ion-item [(ngModel)]="cinsiyet">Cinsiyet:  {{cinsiyet}} </ion-item>
+      <ion-item [(ngModel)]="il">İl:  {{il}} </ion-item>
+        </div>
+          <div id="formFooter" >
+      <ion-button color="dark" [(ngModel)]="sifre"> Şifre Değiştir </ion-button>
+      <ion-button color="dark" [(ngModel)]="aSikki"> Bilgileri Değiştir </ion-button>
+
+          </div>
+
+      </div>
+
+    </div>
+  </div>
+
+
+
+</ion-content>
